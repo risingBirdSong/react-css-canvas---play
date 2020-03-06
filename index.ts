@@ -13,14 +13,7 @@ ctx.fillRect(xCoord, yCord, widthCtx, heightCtx);
 
 
 
-const draw = () => {
-  // ctx.beginPath();
-  // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-  // ctx.stroke();
-  howManyCircles(10);
-  // circle({ x: 200, y: 200, radius: 50 })
-  // circle({ x: 300, y: 300, radius: 50 })
-}
+
 
 interface circleI {
   x: number,
@@ -32,16 +25,16 @@ interface circleI {
 
 const howManyCircles = (howMany: number) => {
   for (let i = 0; i < howMany; i++) {
-    circle({ x: randomX(), y: randomY(), radius: 20 })
+    circle({ x: randomX(50), y: randomY(50), radius: 20 })
   }
 }
 
-const randomX = () => {
-  return Math.floor(Math.random() * widthCtx) + xCoord;
+const randomX = (offset: number) => {
+  return Math.floor(Math.random() * (widthCtx - 2 * offset)) + xCoord + offset;
 }
 
-const randomY = () => {
-  return Math.floor(Math.random() * heightCtx) + yCord;
+const randomY = (offset: number) => {
+  return Math.floor(Math.random() * (heightCtx - 2 * offset)) + yCord + offset;
 }
 
 
@@ -51,6 +44,18 @@ const circle = (inputs: circleI) => {
   ctx.stroke();
 }
 
-setInterval(() => {
-  draw();
-}, 100)
+
+const draw = () => {
+  // ctx.beginPath();
+  // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+  // ctx.stroke();
+  howManyCircles(500);
+  // circle({ x: 200, y: 200, radius: 50 })
+  // circle({ x: 300, y: 300, radius: 50 })
+}
+
+draw();
+
+// setInterval(() => {
+//   draw();
+// }, 100)

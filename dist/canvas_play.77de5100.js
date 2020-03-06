@@ -131,30 +131,22 @@ var widthCtx = 800;
 var heightCtx = 800;
 ctx.fillRect(xCoord, yCord, widthCtx, heightCtx);
 
-var draw = function draw() {
-  // ctx.beginPath();
-  // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-  // ctx.stroke();
-  howManyCircles(10); // circle({ x: 200, y: 200, radius: 50 })
-  // circle({ x: 300, y: 300, radius: 50 })
-};
-
 var howManyCircles = function howManyCircles(howMany) {
   for (var i = 0; i < howMany; i++) {
     circle({
-      x: randomX(),
-      y: randomY(),
+      x: randomX(50),
+      y: randomY(50),
       radius: 20
     });
   }
 };
 
-var randomX = function randomX() {
-  return Math.floor(Math.random() * widthCtx) + xCoord;
+var randomX = function randomX(offset) {
+  return Math.floor(Math.random() * (widthCtx - 2 * offset)) + xCoord + offset;
 };
 
-var randomY = function randomY() {
-  return Math.floor(Math.random() * heightCtx) + yCord;
+var randomY = function randomY(offset) {
+  return Math.floor(Math.random() * (heightCtx - 2 * offset)) + yCord + offset;
 };
 
 var circle = function circle(inputs) {
@@ -163,9 +155,17 @@ var circle = function circle(inputs) {
   ctx.stroke();
 };
 
-setInterval(function () {
-  draw();
-}, 100);
+var draw = function draw() {
+  // ctx.beginPath();
+  // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+  // ctx.stroke();
+  howManyCircles(500); // circle({ x: 200, y: 200, radius: 50 })
+  // circle({ x: 300, y: 300, radius: 50 })
+};
+
+draw(); // setInterval(() => {
+//   draw();
+// }, 100)
 },{}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
