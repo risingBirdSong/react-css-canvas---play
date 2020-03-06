@@ -125,7 +125,47 @@ var ctx = canvas.getContext('2d');
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 ctx.fillStyle = "blue";
-ctx.fillRect(500, 100, 800, 800);
+var xCoord = 500;
+var yCord = 100;
+var widthCtx = 800;
+var heightCtx = 800;
+ctx.fillRect(xCoord, yCord, widthCtx, heightCtx);
+
+var draw = function draw() {
+  // ctx.beginPath();
+  // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+  // ctx.stroke();
+  howManyCircles(10); // circle({ x: 200, y: 200, radius: 50 })
+  // circle({ x: 300, y: 300, radius: 50 })
+};
+
+var howManyCircles = function howManyCircles(howMany) {
+  for (var i = 0; i < howMany; i++) {
+    circle({
+      x: randomX(),
+      y: randomY(),
+      radius: 20
+    });
+  }
+};
+
+var randomX = function randomX() {
+  return Math.floor(Math.random() * widthCtx) + xCoord;
+};
+
+var randomY = function randomY() {
+  return Math.floor(Math.random() * heightCtx) + yCord;
+};
+
+var circle = function circle(inputs) {
+  ctx.beginPath();
+  ctx.arc(inputs.x, inputs.y, inputs.radius, inputs.startAngle = 0, inputs.endAngle = Math.PI * 2);
+  ctx.stroke();
+};
+
+setInterval(function () {
+  draw();
+}, 100);
 },{}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
