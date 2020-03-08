@@ -26,6 +26,12 @@ function App() {
       <Animation rateOfRotate={3} />
       <Animation rateOfRotate={4} />
       <Animation rateOfRotate={5} />
+      <Animation rateOfRotate={6} />
+      <Animation rateOfRotate={7} />
+      <Animation rateOfRotate={8} />
+      <Animation rateOfRotate={9} />
+      <Animation rateOfRotate={15} />
+      <Animation rateOfRotate={20} />
     </div>
   );
 }

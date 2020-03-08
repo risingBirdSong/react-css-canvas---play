@@ -13,14 +13,15 @@ class Animation extends React.Component<animationProps, animationState> {
   constructor(props) {
     super(props);
     this.state = { angle: 0 };
-    this.updateAnimationState = this.updateAnimationState.bind(this);
+    //not necessary with arrow function
+    // this.updateAnimationState = this.updateAnimationState.bind(this);
   }
 
   componentDidMount() {
     this.rAF = requestAnimationFrame(this.updateAnimationState);
   }
 
-  updateAnimationState() {
+  updateAnimationState = () => {
     this.setState(prevState => ({ angle: prevState.angle + this.props.rateOfRotate }));
     this.rAF = requestAnimationFrame(this.updateAnimationState);
   }

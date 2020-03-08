@@ -22,7 +22,12 @@ class Canvas extends React.Component<canvasProps>{
     ctx.translate(width / 2, height / 2);
     ctx.rotate((angle * Math.PI) / 180);
     ctx.fillStyle = "blue";
+    // how are these numbers arrived at?
+    //original - stable axis
     ctx.fillRect(-width / 4, -height / 4, width / 2, height / 2);
+    //some cool axis rotation
+    // ctx.fillRect(-width / 4, -height / 4, width / 4, height / 4);
+    //oh interesting try commenting out ctx.restore, its just choppy movements...
     ctx.restore();
   }
   render() {
