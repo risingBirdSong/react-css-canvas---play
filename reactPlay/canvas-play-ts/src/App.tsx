@@ -10,13 +10,15 @@ import './App.css';
 
 function App() {
   const [fishHookToggle, setFishHook] = useState(false);
+  const [hexaToggle, setHexa] = useState(false);
   return (
     <div>
       <h1>welcome</h1>
-      <button onClick={() => setFishHook(!fishHookToggle)}>click me</button>
+      <button onClick={() => setFishHook(!fishHookToggle)}>fish hooh</button>
+      <button onClick={() => setHexa(!hexaToggle)}> hexa </button>
       {fishHookToggle ? <FishHook /> : null}
-      {/* <TestComponent /> */}
-      <Hexa />
+
+      {hexaToggle ? <Hexa /> : null}
     </div>
   );
 }
