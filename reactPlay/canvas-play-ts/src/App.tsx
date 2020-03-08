@@ -15,6 +15,34 @@ function App() {
 
   const [currentDisplay, setDisplay] = useState("");
 
+  function chooseOne(option: string) {
+    switch (option) {
+      case "fishHook":
+        return <FishHook />;
+      case "hexa":
+        return <Hexa />;
+      case "animation":
+        return <div>
+          <h2>all these rotations</h2>
+          <Animation rateOfRotate={1} />
+          <Animation rateOfRotate={2} />
+          <Animation rateOfRotate={3} />
+          <Animation rateOfRotate={4} />
+          <Animation rateOfRotate={5} />
+          <Animation rateOfRotate={6} />
+          <Animation rateOfRotate={7} />
+          <Animation rateOfRotate={8} />
+          <Animation rateOfRotate={9} />
+          <Animation rateOfRotate={10} />
+          <Animation rateOfRotate={11} />
+          <Animation rateOfRotate={12} />
+          <Animation rateOfRotate={13} />
+          <Animation rateOfRotate={14} />
+          <Animation rateOfRotate={15} />
+        </div>
+    }
+  }
+
   return (
     <div>
       <h1>welcome</h1>
@@ -26,27 +54,7 @@ function App() {
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
-
-      {fishHookToggle ? <FishHook /> : null}
-      {hexaToggle ? <Hexa /> : null}
-      {animationToggle ? <div>
-        <h2>all these rotations</h2>
-        <Animation rateOfRotate={1} />
-        <Animation rateOfRotate={2} />
-        <Animation rateOfRotate={3} />
-        <Animation rateOfRotate={4} />
-        <Animation rateOfRotate={5} />
-        <Animation rateOfRotate={6} />
-        <Animation rateOfRotate={7} />
-        <Animation rateOfRotate={8} />
-        <Animation rateOfRotate={9} />
-        <Animation rateOfRotate={10} />
-        <Animation rateOfRotate={11} />
-        <Animation rateOfRotate={12} />
-        <Animation rateOfRotate={13} />
-        <Animation rateOfRotate={14} />
-        <Animation rateOfRotate={15} />
-      </div> : null}
+      {chooseOne(currentDisplay)}
     </div>
   );
 }
