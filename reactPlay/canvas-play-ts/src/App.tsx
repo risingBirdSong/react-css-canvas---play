@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import './App.css';
 import Animation from "./components/animationCanvas";
 import Canvas from "./components/Canvas";
+import CssPlay from "./components/cssplay";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
           <Animation rateOfRotate={14} />
           <Animation rateOfRotate={15} />
         </div>
+      case "CssPlay":
+        return <CssPlay />
     }
   }
 
@@ -49,12 +52,19 @@ function App() {
       <button onClick={() => { setFishHook(!fishHookToggle); setDisplay("fishHook") }}>fish hooh</button>
       <button onClick={() => { setHexa(!hexaToggle); setDisplay("hexa") }}> hexa </button>
       <button onClick={() => { setAnimation(!animationToggle); setDisplay("animation") }}> animation </button>
+      <button onClick={() => setDisplay("CssPlay")}> CssPlay </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
       {chooseOne(currentDisplay)}
+
+      <div className="CssPlay">
+        <h1><h2><h3><h4></h4></h3>
+        </h2></h1>
+      </div>
+
     </div>
   );
 }
