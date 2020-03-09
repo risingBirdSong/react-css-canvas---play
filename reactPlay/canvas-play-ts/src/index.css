@@ -49,26 +49,34 @@ code {
 
 .a {
   transform: rotate(5deg);
+  transform: skew(5deg , 5deg);
 }
 .b {
   transform: rotate(15deg);
+  transform: skew(10deg, 10deg);
 }
 .c {
   transform: rotate(25deg);
+  transform: skew(15deg,15deg);
 }
 .d {
   transform: rotate(35deg);
+  transform: skew(20deg,20deg);
 }
 .e {
   transform: rotate(50deg);
+  transform: skew(25deg,25deg);
 }
 .f {
   transform: rotate(60deg);
+  transform: skew(30deg,30deg);
 }
 .g {
   transform: rotate(75deg);
+  transform: skew(35deg,35deg);
 }
 .h {
   transform: rotate(90deg);
+  transform: skew(40deg,40deg);
 }
 
