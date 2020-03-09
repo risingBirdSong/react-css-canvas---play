@@ -61,8 +61,15 @@ function App() {
       {chooseOne(currentDisplay)}
 
       <div className="CssPlay">
-        <h1 className="a"></h1>
-        <h1 className="b"></h1>
+        <h1 className="lemon a"></h1>
+        <h1 className="lemon b"></h1>
+        <h1 className="lemon c"></h1>
+        <h1 className="lemon d"></h1>
+        <h1 className="lemon e"></h1>
+        <h1 className="lemon f"></h1>
+        <h1 className="lemon g"></h1>
+        <h1 className="lemon h"></h1>
+
       </div>
 
     </div>

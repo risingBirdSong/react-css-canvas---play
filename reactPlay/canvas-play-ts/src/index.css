@@ -35,7 +35,7 @@ code {
   margin: 20px;
 }
 
-.CssPlay .b {
+.CssPlay .lemon {
   margin: 20px;
   width: 100px;
   height: 100px;
@@ -47,4 +47,28 @@ code {
   align-items: center;
 }
 
+.a {
+  transform: rotate(5deg);
+}
+.b {
+  transform: rotate(15deg);
+}
+.c {
+  transform: rotate(25deg);
+}
+.d {
+  transform: rotate(35deg);
+}
+.e {
+  transform: rotate(50deg);
+}
+.f {
+  transform: rotate(60deg);
+}
+.g {
+  transform: rotate(75deg);
+}
+.h {
+  transform: rotate(90deg);
+}
 
