@@ -32,14 +32,15 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 20px;
 }
 
 .CssPlay .b {
-  margin: 10px;
+  margin: 20px;
   width: 100px;
   height: 100px;
   border-radius: 80% 80% / 10px 50px 10px 50px;
+  box-shadow: 6px 6px 20px 10px green, -8px -8px 5px 5px darkcyan, 5px 5px 25px 10px inset forestgreen;
   border: 10px solid yellowgreen;
   display: flex;
   justify-content: center;
