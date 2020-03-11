@@ -9,6 +9,7 @@ import Canvas from "./components/Canvas";
 import CssPlay from "./components/cssplay";
 import Zipper from "./components/css-zipper";
 import Perspective from "./components/perspective";
+import OverFlowHidden from "./components/overflowhidden";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         return <FishHook />;
       case "hexa":
         return <Hexa />;
-      case "animation":
+      case "Animation":
         return <div>
           <h2>all these rotations</h2>
           <Animation rateOfRotate={1} />
@@ -51,25 +52,26 @@ function App() {
         return <Zipper />
       case "Perspective":
         return <Perspective />
+      case "OverFlowHidden":
+        return <OverFlowHidden />
     }
   }
 
   return (
     <div>
       <h1>welcome</h1>
-      <button onClick={() => { setAnimation(!animationToggle); setDisplay("animation") }}> animation </button>
+      <button onClick={() => setDisplay("Animation")}> Animation </button>
       <button onClick={() => setDisplay("TestComponent")}> TestComponent </button>
       <button onClick={() => setDisplay("Zipper")}> Zipper </button>
       <button onClick={() => setDisplay("Perspective")}> Perspective </button>
+      <button onClick={() => setDisplay("OverFlowHidden")}> OverFlowHidden </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
       {chooseOne(currentDisplay)}
-      <div className="holder">
 
-      </div>
 
     </div>
   );
