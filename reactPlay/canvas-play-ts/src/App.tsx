@@ -8,6 +8,7 @@ import Animation from "./components/animationCanvas";
 import Canvas from "./components/Canvas";
 import CssPlay from "./components/cssplay";
 import Zipper from "./components/css-zipper";
+import Perspective from "./components/perspective";
 
 
 function App() {
@@ -48,18 +49,18 @@ function App() {
         return <TestComponent />
       case "Zipper":
         return <Zipper />
+      case "Perspective":
+        return <Perspective />
     }
   }
 
   return (
     <div>
       <h1>welcome</h1>
-      <button onClick={() => { setFishHook(!fishHookToggle); setDisplay("fishHook") }}>fish hooh</button>
-      <button onClick={() => { setHexa(!hexaToggle); setDisplay("hexa") }}> hexa </button>
       <button onClick={() => { setAnimation(!animationToggle); setDisplay("animation") }}> animation </button>
-      <button onClick={() => setDisplay("CssPlay")}> CssPlay </button>
       <button onClick={() => setDisplay("TestComponent")}> TestComponent </button>
       <button onClick={() => setDisplay("Zipper")}> Zipper </button>
+      <button onClick={() => setDisplay("Perspective")}> Perspective </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
@@ -67,9 +68,7 @@ function App() {
 
       {chooseOne(currentDisplay)}
       <div className="holder">
-        <h1 className="exp"></h1>
-        <h1 className="exp"></h1>
-        <h1 className="exp"></h1>
+
       </div>
 
     </div>
