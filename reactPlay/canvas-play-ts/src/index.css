@@ -49,3 +49,10 @@ code {
 .f {
   transform: perspective(10px) rotateX(-7deg);
 }
+.g {
+  transform: perspective(10px) rotateX(7deg);
+}
+
+.h {
+  transform: perspective(10px) rotateX(-7deg);
+}
