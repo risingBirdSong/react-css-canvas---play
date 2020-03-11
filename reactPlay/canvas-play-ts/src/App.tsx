@@ -43,6 +43,8 @@ function App() {
         </div>
       case "CssPlay":
         return <CssPlay />
+      case "TestComponent":
+        return <TestComponent />
     }
   }
 
@@ -53,13 +55,14 @@ function App() {
       <button onClick={() => { setHexa(!hexaToggle); setDisplay("hexa") }}> hexa </button>
       <button onClick={() => { setAnimation(!animationToggle); setDisplay("animation") }}> animation </button>
       <button onClick={() => setDisplay("CssPlay")}> CssPlay </button>
+      <button onClick={() => setDisplay("TestComponent")}> TestComponent </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
       {chooseOne(currentDisplay)}
-
+      {/* 
       <div className="CssPlay">
         <h1 className="lemon a"></h1>
         <h1 className="lemon b"></h1>
@@ -70,7 +73,7 @@ function App() {
         <h1 className="lemon g"></h1>
         <h1 className="lemon h"></h1>
 
-      </div>
+      </div> */}
 
     </div>
   );

@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/7492c3f0-5652-47e3-a934-1318947cc3d7/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/react-canvas-play",
+  "appService.deploySubpath": ""
+}
