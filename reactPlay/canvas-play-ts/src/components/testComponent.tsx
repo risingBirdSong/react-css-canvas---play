@@ -13,18 +13,21 @@ const TestComponent = () => {
     ctx.fillRect(10, 10, 300, 300)
   })
   return (
-    <canvas
-      ref={canvasRef}
-      width={window.innerWidth / 2}
-      height={window.innerHeight / 2}
-      onClick={() => {
-        const canvas = canvasRef.current as HTMLCanvasElement;
-        const ctx = canvas.getContext('2d');
-        setColor("red");
-        // ctx.fillStyle = curColor;
-        // ctx.fillRect(10, 10, 300, 300)
-      }}
-    />
+    <div>
+      <h2>---does nothing yet---</h2>
+      <canvas
+        ref={canvasRef}
+        width={window.innerWidth / 2}
+        height={window.innerHeight / 2}
+        onClick={() => {
+          const canvas = canvasRef.current as HTMLCanvasElement;
+          const ctx = canvas.getContext('2d');
+          setColor("red");
+          // ctx.fillStyle = curColor;
+          // ctx.fillRect(10, 10, 300, 300)
+        }}
+      />
+    </div>
   )
 }
 
