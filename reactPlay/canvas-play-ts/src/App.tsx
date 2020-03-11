@@ -7,6 +7,7 @@ import './App.css';
 import Animation from "./components/animationCanvas";
 import Canvas from "./components/Canvas";
 import CssPlay from "./components/cssplay";
+import Zipper from "./components/css-zipper";
 
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
         return <CssPlay />
       case "TestComponent":
         return <TestComponent />
+      case "Zipper":
+        return <Zipper />
     }
   }
 
@@ -56,13 +59,14 @@ function App() {
       <button onClick={() => { setAnimation(!animationToggle); setDisplay("animation") }}> animation </button>
       <button onClick={() => setDisplay("CssPlay")}> CssPlay </button>
       <button onClick={() => setDisplay("TestComponent")}> TestComponent </button>
+      <button onClick={() => setDisplay("Zipper")}> Zipper </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
       {chooseOne(currentDisplay)}
-
+      {/* 
       <div className="CssPlay">
         <div className="play a"></div>
         <div className="play b"></div>
@@ -74,7 +78,7 @@ function App() {
         <div className="play h"></div>
         <div className="play i"></div>
         <div className="play j"></div>
-      </div>
+      </div> */}
 
     </div>
   );

@@ -21,38 +21,26 @@ code {
   align-items: center;
 }
 
-.play {
-  background-color: rebeccapurple;
-  width:100px;
-  height:100px;
+.zipper_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid red;
+  min-width: 200;
+  min-height: 200px;
+}
+
+.zipper_both {
+  width: 80px;
+  height:80px;
+  border: 2px solid black;
+  background-color: blueviolet;
   margin: 20px;
 }
 
-.a {
-  transform: perspective(10px) rotateY(2deg)
-}
-.b {
-  transform: perspective(10px) rotateY(-2deg) 
-}
-
-.c {
-  transform: perspective(10px) rotateX(2deg);
-}
-
-.d {
-  transform: perspective(10px) rotateX(-2deg);
-}
-.e {
+.zipper_a {
   transform: perspective(10px) rotateX(7deg);
 }
-
-.f {
-  transform: perspective(10px) rotateX(-7deg);
-}
-.g {
-  transform: perspective(10px) rotateX(7deg);
-}
-
-.h {
+.zipper_b {
   transform: perspective(10px) rotateX(-7deg);
 }
