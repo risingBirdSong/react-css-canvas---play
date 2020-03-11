@@ -5,6 +5,7 @@ const TestComponent = () => {
   useEffect(() => {
     const canvas = canvasRef.current as HTMLCanvasElement;
     const ctx = canvas.getContext('2d');
+    //last commit change that fixed it and now loads on page load... 
     ctx.fillStyle = "blue";
     ctx.fillRect(10, 10, 300, 300)
   }, [])
