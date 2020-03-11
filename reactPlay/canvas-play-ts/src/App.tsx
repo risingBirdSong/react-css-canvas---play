@@ -66,19 +66,11 @@ function App() {
       </div>
 
       {chooseOne(currentDisplay)}
-      {/* 
-      <div className="CssPlay">
-        <div className="play a"></div>
-        <div className="play b"></div>
-        <div className="play c"></div>
-        <div className="play d"></div>
-        <div className="play e"></div>
-        <div className="play f"></div>
-        <div className="play g"></div>
-        <div className="play h"></div>
-        <div className="play i"></div>
-        <div className="play j"></div>
-      </div> */}
+      <div className="holder">
+        <h1 className="exp"></h1>
+        <h1 className="exp"></h1>
+        <h1 className="exp"></h1>
+      </div>
 
     </div>
   );

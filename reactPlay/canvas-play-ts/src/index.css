@@ -44,3 +44,18 @@ code {
 .zipper_b {
   transform: perspective(10px) rotateX(-7deg);
 }
+
+.holder{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exp {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  margin: 15px;
+  transform: perspective(27px) rotateX(29deg)
+}
