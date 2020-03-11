@@ -60,6 +60,15 @@ code {
   border: 2px solid black;
   overflow: hidden;
 }
+.Overflow_Holder_2{
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 7px solid royalblue; */
+  overflow: hidden;
+}
 
 /* perspective css */
 .exp_a {
@@ -121,4 +130,47 @@ code {
   background-color: darkorange;
   margin: -20px;
   transform: skew(35deg, 38deg);
+}
+
+/* breakbreakbreakbreakbreakbreakbreakbreakbreak */
+
+.exp_1_b {
+  width: 100px;
+  height: 450px;
+  background-color: brown;
+  transform: skew(0deg, 45deg);
+  position: absolute;
+
+}
+.exp_1_c {
+  width: 100px;
+  height: 450px;
+  background-color: burlywood;
+  transform: skew(15deg, 45deg);
+  position: absolute;
+
+}
+.exp_1_d {
+  width: 100px;
+  height: 450px;
+  background-color: chocolate;
+  transform: skew(30deg, 45deg);
+  position: absolute;
+
+}
+.exp_1_d {
+  width: 100px;
+  height: 450px;
+  background-color: coral;
+  transform: skew(60deg, 45deg);
+  position: absolute;
+
+}
+.exp_1_e {
+  width: 100px;
+  height: 250px;
+  background-color: brown;
+  transform: skew(75deg, 45deg);
+  position: absolute;
+
 }

@@ -10,6 +10,7 @@ import CssPlay from "./components/cssplay";
 import Zipper from "./components/css-zipper";
 import Perspective from "./components/perspective";
 import OverFlowHidden from "./components/overflowhidden";
+import Pos_absolute from "./components/pos_absolute";
 
 
 function App() {
@@ -54,6 +55,8 @@ function App() {
         return <Perspective />
       case "OverFlowHidden":
         return <OverFlowHidden />
+      case "Pos_absolute":
+        return <Pos_absolute />
     }
   }
 
@@ -65,13 +68,13 @@ function App() {
       <button onClick={() => setDisplay("Zipper")}> Zipper </button>
       <button onClick={() => setDisplay("Perspective")}> Perspective </button>
       <button onClick={() => setDisplay("OverFlowHidden")}> OverFlowHidden </button>
+      <button onClick={() => setDisplay("Pos_absolute")}> Pos_absolute </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
       {chooseOne(currentDisplay)}
-
 
     </div>
   );
