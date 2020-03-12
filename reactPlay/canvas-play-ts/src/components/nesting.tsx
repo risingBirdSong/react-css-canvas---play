@@ -88,6 +88,7 @@ function Nested({ content, number }) {
           CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]
         }`,
         paddingBottom: `${5 * number * 2}px`,
+        paddingRight: `${number * 2}px`,
         paddingTop: `${5 * number * 3}px`
       }}
     >
