@@ -88,7 +88,9 @@ function Nested({ content, number }) {
         padding: `${5 * number + 5}px`
       }}
     >
+      <p>heeey</p>
       <Nested content={content} number={number - 1} />
+      <p>ho</p>
     </div>
   );
 }
