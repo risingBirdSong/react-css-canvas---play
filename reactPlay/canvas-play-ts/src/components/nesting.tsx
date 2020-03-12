@@ -82,15 +82,16 @@ function Nested({ content, number }) {
     <div
       className="NestContainer"
       style={{
-        width: `${50 + number * 30}px`,
-        height: `${50 + number * 30}px`,
-        backgroundColor: `${CSS_COLOR_NAMES[number]}`,
-        padding: `${5 * number + 5}px`
+        width: `${50 + number * 15}px`,
+        height: `${50 + number * 15}px`,
+        backgroundColor: `${
+          CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]
+        }`,
+        paddingBottom: `${5 * number * 2}px`,
+        paddingTop: `${5 * number * 3}px`
       }}
     >
-      <p>heeey</p>
       <Nested content={content} number={number - 1} />
-      <p>ho</p>
     </div>
   );
 }

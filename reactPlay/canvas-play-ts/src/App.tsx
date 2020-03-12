@@ -61,7 +61,11 @@ function App() {
       case "Pos_absolute":
         return <Pos_absolute />;
       case "Nesting":
-        return <Nesting content={"I'm bored"} number={20} />;
+        return (
+          <div className="holder">
+            <Nesting content={"I'm bored"} number={20} />;
+          </div>
+        );
     }
   }
 
@@ -88,7 +92,7 @@ function App() {
 
       {chooseOne(currentDisplay)}
 
-      <div className="holder">{<GiftWrapping />}</div>
+      {/* <div className="holder">{<GiftWrapping />}</div> */}
     </div>
   );
 }
