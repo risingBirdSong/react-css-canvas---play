@@ -2,15 +2,15 @@ import React from "react";
 
 interface canvasState {
   canvasSize: {
-    canvasWidth: number,
-    canvasHeight: number
-  }
-  hexSize: number
+    canvasWidth: number;
+    canvasHeight: number;
+  };
+  hexSize: number;
 }
 
 interface canvasProps {
-  width?: number,
-  height?: number
+  width?: number;
+  height?: number;
 }
 
 interface Point {
@@ -18,31 +18,35 @@ interface Point {
   y: number;
 }
 
-
 class Hexa extends React.Component<canvasProps, canvasState> {
   canvasHex: canvasProps;
   constructor(props) {
     super(props);
     this.state = {
-      canvasSize: { canvasWidth: window.innerWidth, canvasHeight: window.innerHeight },
-      hexSize: 20,
-
-    }
+      canvasSize: {
+        canvasWidth: window.innerWidth,
+        canvasHeight: window.innerHeight
+      },
+      hexSize: 20
+    };
   }
 
   componentDidMount() {
     const { canvasWidth, canvasHeight } = this.state.canvasSize;
     this.canvasHex.width = canvasWidth;
     this.canvasHex.height = canvasHeight;
-    this.drawHex(this.canvasHex, { x: 50, y: 50 })
+    this.drawHex(this.canvasHex, { x: 50, y: 50 });
   }
-
 
   drawHex(canvasID, center: Point) {
     for (let i = 0; i <= 5; i++) {
       let start = this.getHex(center, i);
       let end = this.getHex(center, i + 1);
-      this.drawLine(canvasID, { x: start.x, y: start.y }, { x: end.x, y: end.y })
+      this.drawLine(
+        canvasID,
+        { x: start.x, y: start.y },
+        { x: end.x, y: end.y }
+      );
     }
   }
 
@@ -57,17 +61,17 @@ class Hexa extends React.Component<canvasProps, canvasState> {
 
   getHex(center: Point, i: number) {
     let angle_deg = 60 * i - 30;
-    let angle_rad = Math.PI / 180 * angle_deg;
+    let angle_rad = (Math.PI / 180) * angle_deg;
     let x = center.x + this.state.hexSize * Math.cos(angle_rad);
     let y = center.y + this.state.hexSize * Math.sin(angle_rad);
-    return { x, y }
+    return { x, y };
   }
   render() {
     return (
       <div>
-        <canvas ref={canvasHex => this.canvasHex = canvasHex}></canvas>
+        <canvas ref={canvasHex => (this.canvasHex = canvasHex)}></canvas>
       </div>
-    )
+    );
   }
 }
 

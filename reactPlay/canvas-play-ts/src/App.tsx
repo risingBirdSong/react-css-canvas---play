@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import FishHook from "./components/fishook";
 import TestComponent from "./components/testComponent";
 import Hexa from "./components/hexagonalTut";
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import Animation from "./components/animationCanvas";
 import Canvas from "./components/Canvas";
 import CssPlay from "./components/cssplay";
@@ -11,7 +11,8 @@ import Zipper from "./components/css-zipper";
 import Perspective from "./components/perspective";
 import OverFlowHidden from "./components/overflowhidden";
 import Pos_absolute from "./components/pos_absolute";
-
+import Nesting from "./components/nesting";
+import GiftWrapping from "./components/gitWrap";
 
 function App() {
   const [fishHookToggle, setFishHook] = useState(false);
@@ -27,36 +28,40 @@ function App() {
       case "hexa":
         return <Hexa />;
       case "Animation":
-        return <div>
-          <h2>all these rotations</h2>
-          <Animation rateOfRotate={1} />
-          <Animation rateOfRotate={2} />
-          <Animation rateOfRotate={3} />
-          <Animation rateOfRotate={4} />
-          <Animation rateOfRotate={5} />
-          <Animation rateOfRotate={6} />
-          <Animation rateOfRotate={7} />
-          <Animation rateOfRotate={8} />
-          <Animation rateOfRotate={9} />
-          <Animation rateOfRotate={10} />
-          <Animation rateOfRotate={11} />
-          <Animation rateOfRotate={12} />
-          <Animation rateOfRotate={13} />
-          <Animation rateOfRotate={14} />
-          <Animation rateOfRotate={15} />
-        </div>
+        return (
+          <div>
+            <h2>all these rotations</h2>
+            <Animation rateOfRotate={1} />
+            <Animation rateOfRotate={2} />
+            <Animation rateOfRotate={3} />
+            <Animation rateOfRotate={4} />
+            <Animation rateOfRotate={5} />
+            <Animation rateOfRotate={6} />
+            <Animation rateOfRotate={7} />
+            <Animation rateOfRotate={8} />
+            <Animation rateOfRotate={9} />
+            <Animation rateOfRotate={10} />
+            <Animation rateOfRotate={11} />
+            <Animation rateOfRotate={12} />
+            <Animation rateOfRotate={13} />
+            <Animation rateOfRotate={14} />
+            <Animation rateOfRotate={15} />
+          </div>
+        );
       case "CssPlay":
-        return <CssPlay />
+        return <CssPlay />;
       case "TestComponent":
-        return <TestComponent />
+        return <TestComponent />;
       case "Zipper":
-        return <Zipper />
+        return <Zipper />;
       case "Perspective":
-        return <Perspective />
+        return <Perspective />;
       case "OverFlowHidden":
-        return <OverFlowHidden />
+        return <OverFlowHidden />;
       case "Pos_absolute":
-        return <Pos_absolute />
+        return <Pos_absolute />;
+      case "Nesting":
+        return <Nesting content={"hi"} number={8} />;
     }
   }
 
@@ -64,11 +69,18 @@ function App() {
     <div>
       <h1>welcome</h1>
       <button onClick={() => setDisplay("Animation")}> Animation </button>
-      <button onClick={() => setDisplay("TestComponent")}> TestComponent </button>
+      <button onClick={() => setDisplay("TestComponent")}>
+        {" "}
+        TestComponent{" "}
+      </button>
       <button onClick={() => setDisplay("Zipper")}> Zipper </button>
       <button onClick={() => setDisplay("Perspective")}> Perspective </button>
-      <button onClick={() => setDisplay("OverFlowHidden")}> OverFlowHidden </button>
+      <button onClick={() => setDisplay("OverFlowHidden")}>
+        {" "}
+        OverFlowHidden{" "}
+      </button>
       <button onClick={() => setDisplay("Pos_absolute")}> Pos_absolute </button>
+      <button onClick={() => setDisplay("Nesting")}> Nesting </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
@@ -76,6 +88,7 @@ function App() {
 
       {chooseOne(currentDisplay)}
 
+      <div className="holder">{<GiftWrapping />}</div>
     </div>
   );
 }

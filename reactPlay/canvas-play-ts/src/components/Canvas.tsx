@@ -4,7 +4,7 @@ interface canvasProps {
   angle?: number;
 }
 
-class Canvas extends React.Component<canvasProps>{
+class Canvas extends React.Component<canvasProps> {
   canvasRef: React.RefObject<HTMLCanvasElement>;
   constructor(props: canvasProps) {
     super(props);
@@ -14,8 +14,8 @@ class Canvas extends React.Component<canvasProps>{
     const { angle } = this.props;
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const width = canvas.width ?? 100;
-    const height = canvas.height ?? 100;
+    const width = canvas.width;
+    const height = canvas.height;
     ctx.save();
     ctx.beginPath();
     ctx.clearRect(0, 0, width, height);
@@ -31,9 +31,7 @@ class Canvas extends React.Component<canvasProps>{
     ctx.restore();
   }
   render() {
-    return (
-      <canvas width="300" height="300" ref={this.canvasRef}></canvas>
-    )
+    return <canvas width="300" height="300" ref={this.canvasRef}></canvas>;
   }
 }
 
