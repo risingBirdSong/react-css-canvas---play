@@ -172,7 +172,7 @@ code {
   border: 5px solid black;
   /* max-width: 400px;
   max-height: 400px; */
-  margin: 10px;
+  /* margin: 10px; */
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -199,4 +199,5 @@ code {
 .myCanvas {
   width: 800px;
   height: 800px;
+  /* color: coral; */
 }

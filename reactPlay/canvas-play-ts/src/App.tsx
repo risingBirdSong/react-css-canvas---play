@@ -61,7 +61,7 @@ function App() {
       case "Pos_absolute":
         return <Pos_absolute />;
       case "Nesting":
-        return <Nesting content={"hi"} number={8} />;
+        return <Nesting content={"I'm bored"} number={20} />;
     }
   }
 

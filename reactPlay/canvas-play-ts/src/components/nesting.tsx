@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import CSS_COLOR_NAMES from "../colors";
 
 const Nesting = () => {
   const myRef = React.createRef().current as string;
@@ -61,12 +62,32 @@ const Nesting = () => {
 };
 
 function Nested({ content, number }) {
+  let colors = [
+    "red",
+    "bisque",
+    "blueviolet",
+    "blue",
+    "green",
+    "purple",
+    "yellow",
+    "aquamarine",
+    "coral"
+  ];
+
   if (number === 0) {
-    return content;
+    return <p>I'm bored</p>;
   }
 
   return (
-    <div className="NestContainer">
+    <div
+      className="NestContainer"
+      style={{
+        width: `${50 + number * 30}px`,
+        height: `${50 + number * 30}px`,
+        backgroundColor: `${CSS_COLOR_NAMES[number]}`,
+        padding: `${5 * number + 5}px`
+      }}
+    >
       <Nested content={content} number={number - 1} />
     </div>
   );
