@@ -62,18 +62,6 @@ const Nesting = () => {
 };
 
 function Nested({ content, number }) {
-  let colors = [
-    "red",
-    "bisque",
-    "blueviolet",
-    "blue",
-    "green",
-    "purple",
-    "yellow",
-    "aquamarine",
-    "coral"
-  ];
-
   if (number === 0) {
     return <p>I'm bored</p>;
   }
