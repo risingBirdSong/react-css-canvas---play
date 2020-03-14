@@ -19,6 +19,7 @@ const getPixelRatio = context => {
 
 interface CircleProps {
   trig: "sin" | "cos";
+  rate: number;
 }
 
 const Circle = (props: CircleProps) => {
@@ -63,7 +64,7 @@ const Circle = (props: CircleProps) => {
       );
       ctx.fillStyle = color;
       ctx.fill();
-      i += 0.05;
+      i += props.rate;
 
       console.log("i", i, "cos", Math.cos(i));
       requestId = requestAnimationFrame(render);
