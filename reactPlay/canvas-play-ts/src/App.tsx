@@ -15,6 +15,7 @@ import Nesting from "./components/nesting";
 import Vector from "./components/nature_of_code_1_";
 import GiftWrapping from "./components/gitWrap";
 import Animation_ntr from "./components/ntr-cde-animate";
+import Circle from "./components/hooks_raf_tut";
 
 function App() {
   const [fishHookToggle, setFishHook] = useState(false);
@@ -96,7 +97,12 @@ function App() {
 
       {/* <div className="holder">{<GiftWrapping />}</div> */}
 
-      <div className="holder">{<Animation_ntr />}</div>
+      {/* todo bring this back */}
+      {/* <div className="holder">{<Animation_ntr />}</div> */}
+      <div className="holder">
+        <Circle trig={"cos"} />
+        <Circle trig={"sin"} />
+      </div>
     </div>
   );
 }
