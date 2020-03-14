@@ -1,17 +1,16 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from "react";
 
 const TestComponent = () => {
-
   const [curColor, setColor] = useState("blue");
 
   const canvasRef = useRef(null);
   useEffect(() => {
     const canvas = canvasRef.current as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d');
-    //last commit change that fixed it and now loads on page load... 
+    const ctx = canvas.getContext("2d");
+    //last commit change that fixed it and now loads on page load...
     ctx.fillStyle = curColor;
-    ctx.fillRect(10, 10, 300, 300)
-  })
+    ctx.fillRect(10, 10, 300, 300);
+  });
   return (
     <div>
       <h2>---does nothing yet---</h2>
@@ -21,14 +20,14 @@ const TestComponent = () => {
         height={window.innerHeight / 2}
         onClick={() => {
           const canvas = canvasRef.current as HTMLCanvasElement;
-          const ctx = canvas.getContext('2d');
+          const ctx = canvas.getContext("2d");
           setColor("red");
           // ctx.fillStyle = curColor;
           // ctx.fillRect(10, 10, 300, 300)
         }}
       />
     </div>
-  )
-}
+  );
+};
 
 export default TestComponent;

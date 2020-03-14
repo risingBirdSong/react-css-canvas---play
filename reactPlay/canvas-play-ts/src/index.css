@@ -196,8 +196,8 @@ code {
   height: 170px;
 }
 
-.myCanvas {
-  width: 800px;
-  height: 800px;
+canvas {
+  width: 1000px;
+  height: 1000px;
   /* color: coral; */
 }

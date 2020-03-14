@@ -12,7 +12,9 @@ import Perspective from "./components/perspective";
 import OverFlowHidden from "./components/overflowhidden";
 import Pos_absolute from "./components/pos_absolute";
 import Nesting from "./components/nesting";
+import Vector from "./components/nature_of_code_1_";
 import GiftWrapping from "./components/gitWrap";
+import Animation_ntr from "./components/ntr-cde-animate";
 
 function App() {
   const [fishHookToggle, setFishHook] = useState(false);
@@ -93,6 +95,8 @@ function App() {
       {chooseOne(currentDisplay)}
 
       {/* <div className="holder">{<GiftWrapping />}</div> */}
+
+      <div className="holder">{<Animation_ntr />}</div>
     </div>
   );
 }
