@@ -14,11 +14,14 @@ const Canvassing = () => {
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
-      ctx.moveTo(canvas.width / 2, canvas.height / 2);
+      ctx.moveTo(
+        centerX + (Math.cos(angle) * 35 + 35),
+        centerY + (Math.cos(angle) * 35 + 35)
+      );
       ctx.lineWidth = 3;
       ctx.lineTo(
         centerX + (Math.cos(angle) * 100 + 100),
-        centerY + (Math.sin(angle) * 100 + 100)
+        centerY + (Math.sin(angle) * 35 + 35)
       );
       ctx.stroke();
       ctx.closePath();
