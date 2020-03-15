@@ -1,7 +1,7 @@
 
 import React from "react";
 
-const CSS_COLOR_NAMES = [
+export const CSS_COLOR_NAMES = [
   "AliceBlue",
   "AntiqueWhite",
   "Aqua",
@@ -152,4 +152,37 @@ const CSS_COLOR_NAMES = [
   "YellowGreen",
 ];
 
-export default CSS_COLOR_NAMES;
+const purplesStrings =
+  `lavender	#E6E6FA	rgb(230,230,250)
+thistle	#D8BFD8	rgb(216,191,216)
+plum	#DDA0DD	rgb(221,160,221)
+violet	#EE82EE	rgb(238,130,238)
+orchid	#DA70D6	rgb(218,112,214)
+fuchsia	#FF00FF	rgb(255,0,255)
+magenta	#FF00FF	rgb(255,0,255)
+mediumorchid	#BA55D3	rgb(186,85,211)
+mediumpurple	#9370DB	rgb(147,112,219)
+blueviolet	#8A2BE2	rgb(138,43,226)
+darkviolet	#9400D3	rgb(148,0,211)
+darkorchid	#9932CC	rgb(153,50,204)
+darkmagenta	#8B008B	rgb(139,0,139)
+purple	#800080	rgb(128,0,128)
+indigo	#4B0082	rgb(75,0,130)`;
+
+export const purpleArr = ["#E6E6FA",
+  "#D8BFD8",
+  "#DDA0DD",
+  "#EE82EE",
+  "#DA70D6",
+  "#FF00FF",
+  "#FF00FF",
+  "#BA55D3",
+  "#9370DB",
+  "#8A2BE2",
+  "#9400D3",
+  "#9932CC",
+  "#8B008B",
+  "#800080",
+  "#4B0082"
+];
+

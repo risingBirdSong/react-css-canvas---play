@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import CSS_COLOR_NAMES from "../colors";
+import { CSS_COLOR_NAMES } from "../colors";
 
 const Nesting = () => {
   const myRef = React.createRef().current as string;
