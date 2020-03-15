@@ -68,14 +68,6 @@ const Circle = (props: CircleProps) => {
         0,
         Math.PI * 2
       );
-      let grd = ctx.createRadialGradient(
-        canvas.width / 2,
-        canvas.height / 2,
-        (canvas.width / 2) * cosI,
-        (canvas.width / 2) * cosI,
-        (canvas.height / 2) * cosI,
-        (canvas.width / 2) * sinI
-      );
       ctx.fillStyle = `rgba(100, 10, ${Math.floor(cosI * 250)})`;
       ctx.fill();
       ctx.closePath();

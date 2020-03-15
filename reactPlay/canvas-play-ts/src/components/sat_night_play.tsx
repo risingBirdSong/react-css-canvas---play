@@ -2,13 +2,32 @@ import React, { useEffect, useState, useRef } from "react";
 
 const Canvassing = () => {
   const myRef = useRef();
-
+  let angle = 0;
   useEffect(() => {
     let canvas = myRef.current as HTMLCanvasElement;
     let ctx = canvas.getContext("2d");
-    ctx.arc(canvas.width / 2, canvas.height / 2, 30, 0, Math.PI * 2);
-    ctx.fillStyle = "red";
-    ctx.fill();
+    let requestId;
+
+    let centerX = canvas.width / 2;
+    let centerY = canvas.height / 2;
+
+    const render = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2, canvas.height / 2);
+      ctx.lineTo(centerX + (Math.sin(angle) * 100 + 100), centerY + 50);
+      ctx.stroke();
+      ctx.closePath();
+      angle += 0.05;
+      requestId = requestAnimationFrame(render);
+    };
+    render();
+
+    return () => {
+      cancelAnimationFrame(requestId);
+    };
+    // ctx.fillStyle = "red";
+    // ctx.fill();
   });
 
   return (
