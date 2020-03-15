@@ -18,7 +18,7 @@ const Canvassing = () => {
       ctx.lineWidth = 3;
       ctx.lineTo(
         centerX + (Math.cos(angle) * 100 + 100),
-        centerY + (Math.cos(angle) * 100 + 100)
+        centerY + (Math.sin(angle) * 100 + 100)
       );
       ctx.stroke();
       ctx.closePath();
