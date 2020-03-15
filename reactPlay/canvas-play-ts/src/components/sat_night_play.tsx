@@ -24,11 +24,14 @@ const Canvassing = () => {
       ctx.beginPath();
       ctx.moveTo(centerX, centerY);
       ctx.lineWidth = 3;
-      ctx.lineTo(angle, angle);
+      ctx.lineTo(centerX + 10, centerY + 10);
+      // ctx.translate(canvas.width / 4, canvas.height / 4);
+
+      ctx.rotate(Math.PI / 45);
 
       ctx.strokeStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
       ctx.stroke();
-      ctx.closePath();
+      // ctx.closePath();
       let amount = 0.3;
 
       angle += amount;
