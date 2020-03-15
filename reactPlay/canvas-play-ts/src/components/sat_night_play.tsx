@@ -14,41 +14,23 @@ const Canvassing = () => {
 
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
-    let movingX = 20;
-    let movingY = 20;
+    let movingX = centerX + 45;
+    let movingY = centerY + 45;
     let angleTracker = 0;
     let rotation360 = 0;
     let piTracker = 0;
     const render = () => {
       // ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.lineWidth = 3;
+      ctx.lineTo(angle, angle);
 
-      if (piTracker >= Math.PI * 2) {
-        movingX += 10;
-        movingY += 10;
-        piTracker = 0;
-      }
-
-      ctx.arc(
-        movingX +
-          (Math.cos(angle) / Math.tan(angle) / Math.tan(angle)) * 100 +
-          10,
-        movingY +
-          Math.sin(angle) * Math.tan(angle) * Math.tan(angle) * 100 +
-          10,
-        Math.random() * 10 + 3,
-        0,
-        Math.PI * 2
-      ); // fill in the pixel at (10,10)
-      // ctx.arc(
-
-      // )
-      ctx.fillStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
-      ctx.fill();
       ctx.strokeStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
       ctx.stroke();
       ctx.closePath();
       let amount = 0.3;
+
       angle += amount;
       piTracker += amount;
       angleTracker += angle;
