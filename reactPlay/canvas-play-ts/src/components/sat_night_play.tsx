@@ -4,8 +4,8 @@ import { CSS_COLOR_NAMES, purpleArr } from "../colors";
 const Canvassing = () => {
   const myRef = useRef();
   let angle = 0;
-  // let color = CSS_COLOR_NAMES[0];
-  let color = purpleArr[0];
+  let color = CSS_COLOR_NAMES[0];
+  // let color = purpleArr[0];
 
   useEffect(() => {
     let canvas = myRef.current as HTMLCanvasElement;
@@ -39,7 +39,8 @@ const Canvassing = () => {
       // ctx.arc(
 
       // )
-      ctx.fillStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
+      ctx.fillStyle =
+        CSS_COLOR_NAMES[Math.floor(CSS_COLOR_NAMES.length * Math.random())];
       ctx.fill();
       ctx.closePath();
       let amount = 0.3;
