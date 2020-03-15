@@ -30,11 +30,14 @@ const Canvassing = () => {
       }
 
       ctx.fillRect(
-        movingX + Math.sin(angle) * 50,
+        movingX + Math.tan(angle) * 50,
         movingY + Math.cos(angle) * 50,
         4,
         4
       ); // fill in the pixel at (10,10)
+      // ctx.arc(
+
+      // )
       ctx.fillStyle =
         CSS_COLOR_NAMES[Math.floor(CSS_COLOR_NAMES.length * Math.random())];
       ctx.fill();
