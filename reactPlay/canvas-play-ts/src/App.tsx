@@ -101,7 +101,6 @@ function App() {
       {/* <div className="holder">{<Animation_ntr />}</div> */}
       <div className="holder">
         <Circle trig={"cos"} rate={0.05} />
-        <Circle trig={"sin"} rate={0.06} />
       </div>
     </div>
   );

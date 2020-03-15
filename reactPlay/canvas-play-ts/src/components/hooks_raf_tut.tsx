@@ -45,27 +45,32 @@ const Circle = (props: CircleProps) => {
     canvas.style.height = `${height}px`;
     let requestId;
     const render = () => {
-      if (props.trig === "cos") {
-        color = "blue";
-        trig = Math.abs(Math.cos(i));
-      } else {
-        trig = Math.abs(Math.sin(i));
-        color = "red";
-      }
-
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
       ctx.arc(
         canvas.width / 2,
         canvas.height / 2,
-        (canvas.width / 2) * trig,
+        (canvas.width / 2) * Math.abs(Math.sin(i)),
         0,
         Math.PI * 2
       );
-      ctx.fillStyle = color;
+      let cosI = Math.abs(Math.cos(i));
+      ctx.fillStyle = `rgba(10, 150, ${Math.floor(cosI * 250)})`;
       ctx.fill();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.arc(
+        canvas.width / 2,
+        canvas.height / 2,
+        (canvas.width / 2) * Math.abs(Math.cos(i)),
+        0,
+        Math.PI * 2
+      );
+      let sinI = Math.abs(Math.sin(i));
+      ctx.fillStyle = `rgba(${Math.floor(sinI * 100)}, 20,40)`;
+      ctx.fill();
+      ctx.closePath();
       i += props.rate;
-
       console.log("i", i, "cos", Math.cos(i));
       requestId = requestAnimationFrame(render);
     };
