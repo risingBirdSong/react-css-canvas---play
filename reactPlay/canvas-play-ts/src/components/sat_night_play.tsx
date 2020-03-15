@@ -12,18 +12,21 @@ const Canvassing = () => {
     let centerY = canvas.height / 2;
 
     const render = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
-      ctx.moveTo(
-        centerX + (Math.cos(angle) * 35 + 35),
-        centerY + (Math.cos(angle) * 35 + 35)
-      );
-      ctx.lineWidth = 3;
-      ctx.lineTo(
-        centerX + (Math.cos(angle) * 100 + 100),
-        centerY + (Math.sin(angle) * 35 + 35)
-      );
-      ctx.stroke();
+      // ctx.moveTo(
+      //   centerX + (Math.cos(angle) * 35 + 35),
+      //   centerY + (Math.cos(angle) * 35 + 35)
+      // );
+      // Math.cos(angle) * 50
+      ctx.fillRect(
+        centerX + Math.sin(angle) * 50,
+        centerY + Math.cos(angle) * 50,
+        4,
+        4
+      ); // fill in the pixel at (10,10)
+      ctx.fillStyle = "red";
+      ctx.fill();
       ctx.closePath();
       angle += 0.05;
       requestId = requestAnimationFrame(render);
