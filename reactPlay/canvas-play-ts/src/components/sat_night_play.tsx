@@ -15,7 +15,11 @@ const Canvassing = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
       ctx.moveTo(canvas.width / 2, canvas.height / 2);
-      ctx.lineTo(centerX + (Math.sin(angle) * 100 + 100), centerY + 50);
+      ctx.lineWidth = 3;
+      ctx.lineTo(
+        centerX + (Math.cos(angle) * 100 + 100),
+        centerY + (Math.cos(angle) * 100 + 100)
+      );
       ctx.stroke();
       ctx.closePath();
       angle += 0.05;
