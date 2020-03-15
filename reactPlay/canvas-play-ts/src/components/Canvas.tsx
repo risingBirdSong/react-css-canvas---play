@@ -31,7 +31,14 @@ class Canvas extends React.Component<canvasProps> {
     ctx.restore();
   }
   render() {
-    return <canvas width="300" height="300" ref={this.canvasRef}></canvas>;
+    return (
+      <canvas
+        className="animatedCanvas"
+        width="300px"
+        height="300px"
+        ref={this.canvasRef}
+      ></canvas>
+    );
   }
 }
 

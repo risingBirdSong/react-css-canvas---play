@@ -16,6 +16,7 @@ import Vector from "./components/nature_of_code_1_";
 import GiftWrapping from "./components/gitWrap";
 import Animation_ntr from "./components/ntr-cde-animate";
 import Circle from "./components/hooks_raf_tut";
+import Canvassing from "./components/sat_night_play";
 
 function App() {
   const [fishHookToggle, setFishHook] = useState(false);
@@ -64,11 +65,9 @@ function App() {
       case "Pos_absolute":
         return <Pos_absolute />;
       case "Nesting":
-        return (
-          <div className="holder">
-            <Nesting content={"I'm bored"} number={20} />;
-          </div>
-        );
+        return <Nesting content={"I'm bored"} number={20} />;
+      case "Circle_animated":
+        return <Circle trig={"cos"} rate={0.075} />;
     }
   }
 
@@ -88,20 +87,21 @@ function App() {
       </button>
       <button onClick={() => setDisplay("Pos_absolute")}> Pos_absolute </button>
       <button onClick={() => setDisplay("Nesting")}> Nesting </button>
+      <button onClick={() => setDisplay("Circle_animated")}>
+        {" "}
+        Circle_animated{" "}
+      </button>
 
       <div>
         <h2>set display test -> {currentDisplay}</h2>
       </div>
 
-      {chooseOne(currentDisplay)}
+      <div className="holder">{chooseOne(currentDisplay)}</div>
 
       {/* <div className="holder">{<GiftWrapping />}</div> */}
 
       {/* todo bring this back */}
-      {/* <div className="holder">{<Animation_ntr />}</div> */}
-      <div className="holder">
-        <Circle trig={"cos"} rate={0.05} />
-      </div>
+      <div className="holder">{<Canvassing />}</div>
     </div>
   );
 }

@@ -47,6 +47,7 @@ const Circle = (props: CircleProps) => {
     const render = () => {
       let cosI = Math.abs(Math.cos(i));
       let sinI = Math.abs(Math.sin(i));
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
       ctx.arc(
@@ -56,7 +57,7 @@ const Circle = (props: CircleProps) => {
         0,
         Math.PI * 2
       );
-      ctx.fillStyle = `rgba(10, 150, ${Math.floor(sinI * 250)})`;
+      ctx.fillStyle = `rgba(10, 80, ${Math.floor(sinI * 250)})`;
       ctx.fill();
       ctx.closePath();
       ctx.beginPath();
@@ -67,7 +68,15 @@ const Circle = (props: CircleProps) => {
         0,
         Math.PI * 2
       );
-      ctx.fillStyle = `rgba(10, 150, ${Math.floor(cosI * 250)})`;
+      let grd = ctx.createRadialGradient(
+        canvas.width / 2,
+        canvas.height / 2,
+        (canvas.width / 2) * cosI,
+        (canvas.width / 2) * cosI,
+        (canvas.height / 2) * cosI,
+        (canvas.width / 2) * sinI
+      );
+      ctx.fillStyle = `rgba(100, 10, ${Math.floor(cosI * 250)})`;
       ctx.fill();
       ctx.closePath();
       i += props.rate;

@@ -196,7 +196,7 @@ code {
   height: 170px;
 }
 
-canvas {
+.myCanvas_a {
   width: 1000px;
   height: 1000px;
   color: rgb(160, 20, 40);
