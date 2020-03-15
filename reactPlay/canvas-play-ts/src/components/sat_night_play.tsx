@@ -4,7 +4,7 @@ import { CSS_COLOR_NAMES, purpleArr } from "../colors";
 const Canvassing = () => {
   const myRef = useRef();
   let angle = 0;
-  let color = CSS_COLOR_NAMES[0];
+  let color = purpleArr[0];
   // let color = purpleArr[0];
 
   useEffect(() => {
@@ -30,18 +30,19 @@ const Canvassing = () => {
       }
 
       ctx.arc(
-        movingX + Math.tan(angle) * 50,
-        movingY + Math.cos(angle) * 50,
-        10,
+        movingX + (Math.cos(angle) / Math.tan(angle)) * 100 + 10,
+        movingY + (Math.sin(angle) / Math.tan(angle)) * 100 + 10,
+        Math.random() * 10 + 3,
         0,
         Math.PI * 2
       ); // fill in the pixel at (10,10)
       // ctx.arc(
 
       // )
-      ctx.fillStyle =
-        CSS_COLOR_NAMES[Math.floor(CSS_COLOR_NAMES.length * Math.random())];
+      ctx.fillStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
       ctx.fill();
+      ctx.strokeStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
+      ctx.stroke();
       ctx.closePath();
       let amount = 0.3;
       angle += amount;
