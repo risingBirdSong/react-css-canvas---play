@@ -31,7 +31,7 @@ const Canvassing = () => {
 
       ctx.arc(
         movingX + (Math.cos(angle) / Math.tan(angle)) * 100 + 10,
-        movingY + (Math.sin(angle) / Math.tan(angle)) * 100 + 10,
+        movingY + Math.sin(angle) * Math.tan(angle) * 100 + 10,
         Math.random() * 10 + 3,
         0,
         Math.PI * 2
