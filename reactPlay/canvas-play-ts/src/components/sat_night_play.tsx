@@ -12,7 +12,9 @@ const Canvassing = () => {
     let requestId;
 
     let centerX = canvas.width / 2;
+    let movingX = centerX;
     let centerY = canvas.height / 2;
+    let movingY = centerY;
     let angleTracker = 0;
     let rotation360 = 0;
     let piTracker = 0;
@@ -21,16 +23,15 @@ const Canvassing = () => {
       ctx.beginPath();
 
       if (piTracker >= Math.PI * 2) {
-        return cancelAnimationFrame(requestId);
+        movingX += 10;
+        movingY += 10;
+        console.log("piiii");
+        piTracker = 0;
       }
-      // ctx.moveTo(
-      //   centerX + (Math.cos(angle) * 35 + 35),
-      //   centerY + (Math.cos(angle) * 35 + 35)
-      // );
-      console.log(piTracker, "piTracker");
+
       ctx.fillRect(
-        centerX + Math.sin(angle) * 50,
-        centerY + Math.cos(angle) * 50,
+        movingX + Math.sin(angle) * 50,
+        movingY + Math.cos(angle) * 50,
         4,
         4
       ); // fill in the pixel at (10,10)
@@ -42,6 +43,7 @@ const Canvassing = () => {
       angle += amount;
       piTracker += amount;
       angleTracker += angle;
+
       requestId = requestAnimationFrame(render);
     };
     render();
