@@ -20,6 +20,7 @@ const Canvassing = () => {
     let pieTracker = 0;
     let rotatorTracker = 0;
     let counter = 0;
+    //TODO mess with fibonacci sequence
     const render = () => {
       // ctx.beginPath;
 
@@ -29,6 +30,7 @@ const Canvassing = () => {
       }
       console.log("emoji test U+1F600");
       ctx.lineWidth = 3;
+      ctx.lineTo(190, 190);
       ctx.lineTo(200, 200);
       let rotator = Math.PI / 45;
       rotator = Number(rotator.toFixed(4));
