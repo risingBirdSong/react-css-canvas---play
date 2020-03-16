@@ -37,9 +37,8 @@ const Canvassing = () => {
       ctx.lineWidth = 3;
       let rotator = Math.PI / 45;
       // ctx.lineTo(rotatorTracker, rotatorTracker);
-      ctx.lineTo(Math.sin(piRotator) * 400, Math.cos(piRotator) * 400);
-      // ctx.lineTo(rotatorTracker ** 2 + 15, rotatorTracker ** 2 + 15);
-      // ctx.lineTo(rotatorTracker ** 2 + 30, rotatorTracker ** 2 + 30);
+      ctx.lineTo(Math.sin(piRotator) * 400, Math.tan(piRotator) * 400);
+
       rotator = Number(rotator.toFixed(4));
       rotatorTracker += rotator;
       piRotator += rotator;
