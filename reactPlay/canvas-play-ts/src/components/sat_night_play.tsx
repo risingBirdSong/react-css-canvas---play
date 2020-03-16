@@ -38,13 +38,15 @@ const Canvassing = () => {
       let rotator = Math.PI / 45;
       // ctx.lineTo(rotatorTracker, rotatorTracker);
       console.log("crazy lotus fractal pattern");
-      ctx.lineTo(Math.cos(piRotator) * 300, Math.tan(piRotator) * 400);
+      ctx.lineTo(Math.cos(piRotator) * 300, Math.sin(piRotator) * 400);
 
       rotator = Number(rotator.toFixed(4));
       rotatorTracker += rotator;
       piRotator += rotator;
       console.log("rotator", rotator);
       ctx.rotate(rotator);
+      //this isn't working
+      // ctx.strokeStyle = purpleArr[Math.floor(Math.random() * purpleArr.length)];
       ctx.strokeStyle = purpleArr[5];
       ctx.stroke();
       let amount = 0.3;
