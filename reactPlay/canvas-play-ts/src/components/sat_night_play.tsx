@@ -17,15 +17,30 @@ const Canvassing = () => {
     ctx.beginPath();
     ctx.translate(centerX, centerY);
     // ctx.moveTo(centerX, centerY);
-
+    let pieTracker = 0;
+    let rotatorTracker = 0;
+    let counter = 0;
     const render = () => {
+      // ctx.beginPath;
+
+      if (rotatorTracker > 3.141592 * 2) {
+        console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
+        return cancelAnimationFrame(requestId);
+      }
       ctx.lineWidth = 3;
       ctx.lineTo(200, 200);
-      ctx.rotate(Math.PI / 45);
+      let rotator = Math.PI / 45;
+      rotator = Number(rotator.toFixed(4));
+      rotatorTracker += rotator;
+      console.log("rotator", rotator);
+      ctx.rotate(rotator);
       ctx.strokeStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
       ctx.stroke();
       let amount = 0.3;
       angle += amount;
+      pieTracker += 1;
+
+      // ctx.lineTo(centerX / 10, centerY / 10);
       requestId = requestAnimationFrame(render);
     };
     render();
