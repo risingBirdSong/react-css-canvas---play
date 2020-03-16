@@ -29,13 +29,13 @@ const Canvassing = () => {
         return cancelAnimationFrame(requestId);
       }
       ctx.lineWidth = 3;
-      ctx.lineTo(rotatorTracker, rotatorTracker);
       let rotator = Math.PI / 45;
+      ctx.lineTo(rotatorTracker * 5, rotatorTracker * 5);
       rotator = Number(rotator.toFixed(4));
       rotatorTracker += rotator;
       console.log("rotator", rotator);
       ctx.rotate(rotator);
-      ctx.strokeStyle = purpleArr[Math.floor(purpleArr.length * Math.random())];
+      ctx.strokeStyle = purpleArr[5];
       ctx.stroke();
       let amount = 0.3;
       angle += amount;
