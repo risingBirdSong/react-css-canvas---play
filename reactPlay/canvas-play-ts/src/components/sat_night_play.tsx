@@ -11,6 +11,7 @@ const Canvassing = () => {
     let canvas = myRef.current as HTMLCanvasElement;
     let ctx = canvas.getContext("2d");
     let requestId;
+    let otherRequestID;
 
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
@@ -29,7 +30,7 @@ const Canvassing = () => {
         piRotator = 0;
       }
 
-      if (rotatorTracker > 3.141592 * 40) {
+      if (rotatorTracker > 3.141592 * 48) {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
@@ -52,6 +53,7 @@ const Canvassing = () => {
 
       // ctx.lineTo(centerX / 10, centerY / 10);
       requestId = requestAnimationFrame(render);
+      otherRequestID = requestAnimationFrame(render);
     };
     render();
 
