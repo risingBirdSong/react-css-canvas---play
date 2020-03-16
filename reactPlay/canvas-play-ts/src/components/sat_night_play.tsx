@@ -20,9 +20,14 @@ const Canvassing = () => {
     let pieTracker = 0;
     let rotatorTracker = 0;
     let counter = 0;
+    let piRotator = 0;
     //TODO mess with fibonacci sequence
     const render = () => {
       // ctx.beginPath;
+
+      if (piRotator > Math.PI) {
+        piRotator = 0;
+      }
 
       if (rotatorTracker > 3.141592 * 32) {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
@@ -30,7 +35,9 @@ const Canvassing = () => {
       }
       ctx.lineWidth = 3;
       let rotator = Math.PI / 45;
-      ctx.lineTo(rotatorTracker * 5, rotatorTracker * 5);
+      ctx.lineTo(rotatorTracker ** 2, rotatorTracker ** 2);
+      // ctx.lineTo(rotatorTracker ** 2 + 15, rotatorTracker ** 2 + 15);
+      // ctx.lineTo(rotatorTracker ** 2 + 30, rotatorTracker ** 2 + 30);
       rotator = Number(rotator.toFixed(4));
       rotatorTracker += rotator;
       console.log("rotator", rotator);
