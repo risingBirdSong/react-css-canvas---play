@@ -35,11 +35,13 @@ const Canvassing = () => {
       }
       ctx.lineWidth = 3;
       let rotator = Math.PI / 45;
-      ctx.lineTo(rotatorTracker ** 2, rotatorTracker ** 2);
+      // ctx.lineTo(rotatorTracker, rotatorTracker);
+      ctx.lineTo(Math.sin(piRotator) * 100, Math.sin(piRotator) * 100);
       // ctx.lineTo(rotatorTracker ** 2 + 15, rotatorTracker ** 2 + 15);
       // ctx.lineTo(rotatorTracker ** 2 + 30, rotatorTracker ** 2 + 30);
       rotator = Number(rotator.toFixed(4));
       rotatorTracker += rotator;
+      piRotator += rotator;
       console.log("rotator", rotator);
       ctx.rotate(rotator);
       ctx.strokeStyle = purpleArr[5];
