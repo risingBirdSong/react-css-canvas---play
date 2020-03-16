@@ -24,14 +24,12 @@ const Canvassing = () => {
     const render = () => {
       // ctx.beginPath;
 
-      if (rotatorTracker > 3.141592 * 2) {
+      if (rotatorTracker > 3.141592 * 32) {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
-      console.log("emoji test U+1F600");
       ctx.lineWidth = 3;
-      ctx.lineTo(190, 190);
-      ctx.lineTo(200, 200);
+      ctx.lineTo(rotatorTracker, rotatorTracker);
       let rotator = Math.PI / 45;
       rotator = Number(rotator.toFixed(4));
       rotatorTracker += rotator;
