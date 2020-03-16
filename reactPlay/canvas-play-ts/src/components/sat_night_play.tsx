@@ -27,6 +27,7 @@ const Canvassing = () => {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
+      console.log("emoji test U+1F600");
       ctx.lineWidth = 3;
       ctx.lineTo(200, 200);
       let rotator = Math.PI / 45;
