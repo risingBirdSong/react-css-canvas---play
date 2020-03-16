@@ -29,14 +29,14 @@ const Canvassing = () => {
         piRotator = 0;
       }
 
-      if (rotatorTracker > 3.141592 * 32) {
+      if (rotatorTracker > 3.141592 * 40) {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
       ctx.lineWidth = 3;
       let rotator = Math.PI / 45;
       // ctx.lineTo(rotatorTracker, rotatorTracker);
-      ctx.lineTo(Math.sin(piRotator) * 100, Math.sin(piRotator) * 100);
+      ctx.lineTo(Math.sin(piRotator) * 400, Math.cos(piRotator) * 400);
       // ctx.lineTo(rotatorTracker ** 2 + 15, rotatorTracker ** 2 + 15);
       // ctx.lineTo(rotatorTracker ** 2 + 30, rotatorTracker ** 2 + 30);
       rotator = Number(rotator.toFixed(4));
