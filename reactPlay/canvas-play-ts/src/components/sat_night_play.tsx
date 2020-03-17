@@ -44,8 +44,8 @@ const Canvassing = () => {
         Math.tan(piRotator) * 5
       );
       ctx.lineTo(
-        (pieTracker * 5 * Math.cos(piRotator)) / Math.cos(piRotator),
-        Math.tan(piRotator) * 5
+        pieTracker * 5 * Math.sin(piRotator) * Math.cos(piRotator),
+        Math.sin(piRotator) * 5
       );
 
       rotator = Number(rotator.toFixed(4));
