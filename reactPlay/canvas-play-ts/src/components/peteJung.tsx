@@ -71,7 +71,7 @@ function Pete() {
 
     let radius = 35;
     let steps = 360;
-    let subSteps = 45;
+    let subSteps = 22;
     //(centerX + radius * Math.cos(2 * Math.PI * i / steps)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < steps; i += 2) {
@@ -79,7 +79,7 @@ function Pete() {
       ctx.arc(
         600 + Math.cos(i * (Math.PI / 45)) * radius,
         850 / 2 + Math.sin(i * (Math.PI / 45)) * radius,
-        circleState.radius,
+        100,
         circleState.startAngle,
         circleState.endAngle
       );
