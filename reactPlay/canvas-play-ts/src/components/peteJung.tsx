@@ -82,12 +82,40 @@ function Pete() {
         circleState.startAngle,
         circleState.endAngle
       );
-      ctx.lineTo(
+      // ctx.lineTo(
+      //   600 + Math.cos(i * (Math.PI / 45)) * radius * 10,
+      //   850 / 2 + Math.sin(i * (Math.PI / 45)) * radius * 10
+      // );
+      // ctx.moveTo(
+      //   600 + Math.cos(i * (Math.PI / 45)) * radius * 10,
+      //   850 / 2 + Math.sin(i * (Math.PI / 45)) * radius * 10
+      // );
+      // ctx.arc(
+      //   600 + Math.cos(i * (Math.PI / 45)) * radius,
+      //   850 / 2 + Math.sin(i * (Math.PI / 45)) * radius,
+      //   circleState.radius,
+      //   circleState.startAngle,
+      //   circleState.endAngle
+      // );
+      ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.save();
+      ctx.translate(
         600 + Math.cos(i * (Math.PI / 45)) * radius * 10,
         850 / 2 + Math.sin(i * (Math.PI / 45)) * radius * 10
       );
-      ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
+      ctx.arc(
+        Math.cos(i * (Math.PI / 45)) * radius,
+        Math.sin(i * (Math.PI / 45)) * radius,
+        circleState.radius,
+        circleState.startAngle,
+        circleState.endAngle
+      );
+
       ctx.stroke();
+      ctx.restore();
       ctx.closePath();
     }
     console.log("what");
