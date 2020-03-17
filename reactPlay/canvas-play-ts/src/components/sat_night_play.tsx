@@ -30,7 +30,7 @@ const Canvassing = () => {
         piRotator = 0;
       }
 
-      if (rotatorTracker > 3.141592 * 6) {
+      if (rotatorTracker > 3.141592 * 12) {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
@@ -40,8 +40,8 @@ const Canvassing = () => {
       // ctx.lineTo(rotatorTracker, rotatorTracker);
       console.log("crazy lotus fractal pattern");
       ctx.arc(
-        pieTracker * Math.acos(piRotator),
-        pieTracker,
+        pieTracker * Math.log(piRotator),
+        pieTracker * Math.log(piRotator),
         10,
         0,
         Math.PI * 2
