@@ -36,16 +36,14 @@ const Canvassing = () => {
       }
       console.log("change for git");
       ctx.lineWidth = 3;
-      let rotator = Math.PI / 2.6;
+      let rotator = Math.PI / 10;
       // ctx.lineTo(rotatorTracker, rotatorTracker);
       console.log("crazy lotus fractal pattern");
-      ctx.bezierCurveTo(
-        pieTracker * Math.sin(piRotator),
-        Math.tan(piRotator),
-        pieTracker * 2 * Math.sin(piRotator),
-        Math.tan(piRotator) * 2,
-        centerX,
-        centerY
+      ctx.quadraticCurveTo(
+        Math.sin(piRotator) * pieTracker * 5,
+        Math.sin(piRotator) * pieTracker,
+        0,
+        0
       );
 
       rotator = Number(rotator.toFixed(4));
