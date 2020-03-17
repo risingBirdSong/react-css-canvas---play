@@ -41,7 +41,7 @@ const Canvassing = () => {
       console.log("crazy lotus fractal pattern");
       ctx.lineTo(
         Math.cos(piRotator),
-        (Math.tanh(piRotator) / Math.sin(piRotator)) ** 9
+        (Math.tanh(piRotator) / Math.cos(piRotator)) ** 5
       );
 
       rotator = Number(rotator.toFixed(4));
