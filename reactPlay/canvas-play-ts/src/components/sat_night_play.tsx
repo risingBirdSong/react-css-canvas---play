@@ -34,6 +34,7 @@ const Canvassing = () => {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
+      console.log("change for git");
       ctx.lineWidth = 3;
       let rotator = Math.PI / 5;
       // ctx.lineTo(rotatorTracker, rotatorTracker);
