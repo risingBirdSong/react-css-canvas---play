@@ -68,46 +68,11 @@ function Pete() {
     let angle = 0;
     let canvas = myRef.current as HTMLCanvasElement;
     let ctx = canvas.getContext("2d");
-    function makeArc(xLocation: number, yLocation: number, i: number) {
-      ctx.beginPath();
-      ctx.arc(
-        xLocation + Math.sin(Math.PI / 45),
-        yLocation + Math.cos(Math.PI / 45),
-        10,
-        0,
-        Math.PI * 2
-      );
-
-      ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
-      ctx.stroke();
-      ctx.closePath();
-    }
 
     let radius = 35;
     let steps = 360;
     //(centerX + radius * Math.cos(2 * Math.PI * i / steps)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // for (let i = 0; i < steps; i += 2) {
-    //   makeArc(randomX(), randomY(), i);
-    //   makeArc(randomX(), randomY(), i);
-    // }
-    // let i = 0;
-    // for (let point of coords) {
-    //   for (let i = 0; i < steps; i += 2) {
-    //     ctx.beginPath();
-    //     ctx.arc(
-    //       point.x + 90 + Math.cos(i * (Math.PI / 45)) * radius,
-    //       point.y + 90 + Math.sin(i * (Math.PI / 45)) * radius,
-    //       circleState.radius,
-    //       circleState.startAngle,
-    //       circleState.endAngle
-    //     );
-    //     ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
-    //     ctx.stroke();
-    //     ctx.closePath();
-    //   }
-    // }
     for (let i = 0; i < steps; i += 2) {
       ctx.beginPath();
       ctx.arc(
@@ -116,6 +81,10 @@ function Pete() {
         circleState.radius,
         circleState.startAngle,
         circleState.endAngle
+      );
+      ctx.lineTo(
+        600 + Math.cos(i * (Math.PI / 45)) * radius * 10,
+        850 / 2 + Math.sin(i * (Math.PI / 45)) * radius * 10
       );
       ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
       ctx.stroke();
