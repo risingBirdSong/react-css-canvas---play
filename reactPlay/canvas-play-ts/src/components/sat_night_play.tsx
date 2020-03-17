@@ -40,9 +40,9 @@ const Canvassing = () => {
       // ctx.lineTo(rotatorTracker, rotatorTracker);
       console.log("crazy lotus fractal pattern");
       ctx.bezierCurveTo(
-        (pieTracker * Math.sin(piRotator)) / Math.cos(piRotator),
+        pieTracker * Math.sin(piRotator),
         Math.tan(piRotator),
-        (pieTracker * 2 * Math.sin(piRotator)) / Math.cos(piRotator),
+        pieTracker * 2 * Math.sin(piRotator),
         Math.tan(piRotator) * 2,
         centerX,
         centerY
