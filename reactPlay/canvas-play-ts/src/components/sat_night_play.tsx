@@ -30,7 +30,7 @@ const Canvassing = () => {
         piRotator = 0;
       }
 
-      if (rotatorTracker > 3.141592 * 16) {
+      if (rotatorTracker > 3.141592 * 32) {
         console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
         return cancelAnimationFrame(requestId);
       }
@@ -47,8 +47,8 @@ const Canvassing = () => {
       //   Math.PI * 2
       // );
       ctx.lineTo(
-        pieTracker / Math.abs(Math.log(Math.sin(piRotator))) / 100,
-        pieTracker / Math.abs(Math.log(Math.sin(piRotator))) / 100
+        pieTracker / Math.abs(Math.log(Math.sinh(piRotator))) / 25,
+        pieTracker / Math.abs(Math.log(Math.sinh(piRotator))) / 25
       );
 
       rotator = Number(rotator.toFixed(4));
