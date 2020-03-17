@@ -71,6 +71,7 @@ function Pete() {
 
     let radius = 35;
     let steps = 360;
+    let subSteps = 45;
     //(centerX + radius * Math.cos(2 * Math.PI * i / steps)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < steps; i += 2) {
@@ -106,14 +107,18 @@ function Pete() {
         600 + Math.cos(i * (Math.PI / 45)) * radius * 10,
         850 / 2 + Math.sin(i * (Math.PI / 45)) * radius * 10
       );
-      ctx.arc(
-        Math.cos(i * (Math.PI / 45)) * radius,
-        Math.sin(i * (Math.PI / 45)) * radius,
-        circleState.radius,
-        circleState.startAngle,
-        circleState.endAngle
-      );
-
+      ctx.beginPath();
+      for (let i = 0; i < subSteps; i += 2) {
+        ctx.arc(
+          Math.cos(i * (Math.PI / 45)) * radius,
+          Math.sin(i * (Math.PI / 45)) * radius,
+          circleState.radius,
+          circleState.startAngle,
+          circleState.endAngle
+        );
+      }
+      ctx.closePath();
+      ctx.strokeStyle = "red";
       ctx.stroke();
       ctx.restore();
       ctx.closePath();
