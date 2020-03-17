@@ -102,8 +102,8 @@ function App() {
       {/* <div className="holder">{<GiftWrapping />}</div> */}
 
       {/* todo bring this back */}
-      {/* <div className="holder">{<Canvassing />}</div> */}
-      <div className="holder">{<Pete />}</div>
+      <div className="holder">{<Canvassing />}</div>
+      {/* <div className="holder">{<Pete />}</div> */}
     </div>
   );
 }
