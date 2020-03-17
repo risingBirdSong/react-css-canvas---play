@@ -92,35 +92,35 @@ function Pete() {
     //   makeArc(randomX(), randomY(), i);
     //   makeArc(randomX(), randomY(), i);
     // }
-    let i = 0;
-    for (let point of coords) {
-      for (let i = 0; i < steps; i += 2) {
-        ctx.beginPath();
-        ctx.arc(
-          point.x + 90 + Math.cos(i * (Math.PI / 45)) * radius,
-          point.y + 90 + Math.sin(i * (Math.PI / 45)) * radius,
-          circleState.radius,
-          circleState.startAngle,
-          circleState.endAngle
-        );
-        ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
-        ctx.stroke();
-        ctx.closePath();
-      }
-    }
-    // for (let i = 0; i < steps; i += 2) {
-    //   ctx.beginPath();
-    //   ctx.arc(
-    //     centerX + 90 + Math.cos(i * (Math.PI / 45)) * radius,
-    //     centerY + 90 + Math.sin(i * (Math.PI / 45)) * radius,
-    //     circleState.radius,
-    //     circleState.startAngle,
-    //     circleState.endAngle
-    //   );
-    //   ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
-    //   ctx.stroke();
-    //   ctx.closePath();
+    // let i = 0;
+    // for (let point of coords) {
+    //   for (let i = 0; i < steps; i += 2) {
+    //     ctx.beginPath();
+    //     ctx.arc(
+    //       point.x + 90 + Math.cos(i * (Math.PI / 45)) * radius,
+    //       point.y + 90 + Math.sin(i * (Math.PI / 45)) * radius,
+    //       circleState.radius,
+    //       circleState.startAngle,
+    //       circleState.endAngle
+    //     );
+    //     ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
+    //     ctx.stroke();
+    //     ctx.closePath();
+    //   }
     // }
+    for (let i = 0; i < steps; i += 2) {
+      ctx.beginPath();
+      ctx.arc(
+        600 + Math.cos(i * (Math.PI / 45)) * radius,
+        850 / 2 + Math.sin(i * (Math.PI / 45)) * radius,
+        circleState.radius,
+        circleState.startAngle,
+        circleState.endAngle
+      );
+      ctx.strokeStyle = styleRef[Math.floor(Math.random() * styleRef.length)];
+      ctx.stroke();
+      ctx.closePath();
+    }
     console.log("what");
     setTimeout(() => setState(!state), 10);
   }, [state]);
