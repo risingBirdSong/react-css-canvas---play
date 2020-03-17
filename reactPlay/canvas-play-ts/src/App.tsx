@@ -17,6 +17,7 @@ import GiftWrapping from "./components/gitWrap";
 import Animation_ntr from "./components/ntr-cde-animate";
 import Circle from "./components/hooks_raf_tut";
 import Canvassing from "./components/sat_night_play";
+import Pete from "./components/peteJung";
 
 function App() {
   const [fishHookToggle, setFishHook] = useState(false);
@@ -101,7 +102,8 @@ function App() {
       {/* <div className="holder">{<GiftWrapping />}</div> */}
 
       {/* todo bring this back */}
-      <div className="holder">{<Canvassing />}</div>
+      {/* <div className="holder">{<Canvassing />}</div> */}
+      <div className="holder">{<Pete />}</div>
     </div>
   );
 }
