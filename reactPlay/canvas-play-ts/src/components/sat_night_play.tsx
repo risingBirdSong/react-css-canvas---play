@@ -42,7 +42,7 @@ const Canvassing = () => {
       ctx.arc(
         pieTracker * piRotator,
         pieTracker * piRotator,
-        pieTracker,
+        pieTracker / piRotator,
         0,
         Math.PI * 2
       );
