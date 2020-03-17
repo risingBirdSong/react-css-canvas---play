@@ -3,82 +3,51 @@ import { CSS_COLOR_NAMES, purpleArr } from "../colors";
 
 const Canvassing = () => {
   const myRef = useRef();
-  let angle = 0;
-  let color = purpleArr[0];
-  let debug = 10;
+  const [state, setState] = useState(false);
 
+  const [styleRef, setStyleRef] = useState([
+    "#E6E6FA",
+    "#D8BFD8",
+    "#DDA0DD",
+    "#EE82EE",
+    "#DA70D6",
+    "#FF00FF",
+    "#FF00FF",
+    "#BA55D3",
+    "#9370DB",
+    "#8A2BE2",
+    "#9400D3",
+    "#9932CC",
+    "#8B008B",
+    "#800080",
+    "#4B0082"
+  ]);
   useEffect(() => {
     let canvas = myRef.current as HTMLCanvasElement;
     let ctx = canvas.getContext("2d");
-    let requestId;
-    let otherRequestID;
 
-    let centerX = canvas.width / 2;
-    let centerY = canvas.height / 2;
-    ctx.beginPath();
-    ctx.translate(centerX, centerY);
-    // ctx.moveTo(centerX, centerY);
-    let pieTracker = 0;
-    let rotatorTracker = 0;
-    let counter = 0;
-    let piRotator = 0;
-    //TODO mess with fibonacci sequence
-    const render = () => {
-      // ctx.beginPath;
-
-      if (piRotator > Math.PI) {
-        piRotator = 0;
-      }
-
-      if (rotatorTracker > 3.141592 * 32) {
-        console.log("pieTracker", pieTracker, "rotatorTracker", rotatorTracker);
-        return cancelAnimationFrame(requestId);
-      }
-      console.log("change for git");
-      ctx.lineWidth = 3;
-      let rotator = Math.PI / (45 / 3);
-      // ctx.lineTo(rotatorTracker, rotatorTracker);
-      console.log("crazy lotus fractal pattern");
-      // ctx.arc(
-      //   pieTracker * Math.abs(Math.log(piRotator)),
-      //   pieTracker * Math.abs(Math.log(piRotator)),
-      //   3,
-      //   0,
-      //   Math.PI * 2
-      // );
-      ctx.lineTo(
-        (pieTracker *
-          Math.abs(Math.log(Math.tan(piRotator)) / Math.tan(piRotator))) /
-          10,
-        (pieTracker *
-          Math.abs(Math.log(Math.tan(piRotator)) / Math.tan(piRotator))) /
-          10
+    let radius = 35;
+    let steps = 180;
+    //(centerX + radius * Math.cos(2 * Math.PI * i / steps)
+    ctx.translate(canvas.width / 5, canvas.height / 5);
+    for (let i = 0; i < steps; i += 2) {
+      ctx.beginPath();
+      ctx.translate(i / 20, i / 20);
+      ctx.arc(
+        Math.sin((i * Math.PI) / 45) * radius,
+        Math.cos((i * Math.PI) / 45) * radius,
+        30,
+        0,
+        Math.PI * 2
       );
 
-      rotator = Number(rotator.toFixed(4));
-      rotatorTracker += rotator;
-      piRotator += rotator;
-      console.log("rotator", rotator);
-      ctx.rotate(rotator);
-      //this isn't working
-      // ctx.strokeStyle = purpleArr[Math.floor(Math.random() * purpleArr.length)];
-      ctx.strokeStyle = purpleArr[5];
+      ctx.strokeStyle = "purple";
       ctx.stroke();
-      let amount = 0.3;
-      angle += amount;
-      pieTracker += 1;
+      ctx.closePath();
+    }
 
-      // ctx.lineTo(centerX / 10, centerY / 10);
-      requestId = requestAnimationFrame(render);
-    };
-    render();
-
-    return () => {
-      cancelAnimationFrame(requestId);
-    };
-    // ctx.fillStyle = "red";
-    // ctx.fill();
-  });
+    setTimeout(() => setState(!state), 10);
+  }, [state]);
 
   return (
     <canvas width="1200px" height="850px" ref={myRef}>
